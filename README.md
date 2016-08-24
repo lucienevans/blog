@@ -1,0 +1,2 @@
+# blog
+madoko blog test
