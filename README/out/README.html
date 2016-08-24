@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="Madoko, version 1.0.2" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <style type="text/css"  class="link">
+  /*# sourceURL=madoko.css */
+  
+  .madoko .toc>.tocblock .tocblock .tocblock {
+    margin-left: 2.25em;
+  }
+  .madoko .toc>.tocblock .tocblock {
+    margin-left: 1.5em;
+  }
+  .madoko .toc-contents>.tocblock>.tocitem {
+    font-weight: bold;
+  }
+  .madoko .toc {
+    margin-top: 1em;
+  }
+  .madoko p.para-continue {
+    margin-bottom: 0pt;
+  }
+  .madoko .para-block+p {
+    margin-top: 0pt;
+  }
+  .madoko ul.para-block, .madoko ol.para-block {
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+  }
+  .madoko ul.para-end, .madoko ol.para-end {
+    margin-bottom: 1em;
+  }
+  .madoko dl {
+    margin-left: 0em;
+  }
+  .madoko blockquote {
+    font-style: italic;
+  }
+  .madoko a.localref {
+    text-decoration: none;
+  }
+  .madoko a.localref:hover {
+    text-decoration: underline;
+  }
+  .madoko .footnotes {
+    font-size: smaller;
+    margin-top: 2em;
+  }
+  .madoko .footnotes hr {
+    width: 50%;
+    text-align: left;
+  }
+  .madoko .footnote { 
+    margin-left: 1em;
+  }
+  .madoko .footnote-before {
+    margin-left: -1em;
+    width: 1em;
+    display: inline-block;
+  }
+  .madoko .align-center, .madoko .align-center>p {
+    text-align: center !important;
+  }
+  .madoko .align-center pre {
+    text-align: left;
+  }
+  .madoko .align-center>* {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-left, .madoko .align-left>p {
+    text-align: left !important;
+  }
+  .madoko .align-left>* {
+    margin-left: 0pt !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-right, .madoko .align-right>p {
+    text-align: right !important;
+  }
+  .madoko .align-right>* {
+    margin-left: auto !important;
+    margin-right: 0pt !important;
+  }
+  .madoko .align-center>table,
+  .madoko .align-left>table,
+  .madoko .align-right>table {
+    text-align: left !important;
+  }
+  .madoko .equation-before {
+    float: right;
+  }
+  .madoko .bibitem {
+    font-size: smaller;
+  }
+  .madoko .bibsearch {
+    font-size: x-small;
+    text-decoration:none;
+    color: black;
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  .madoko .block, .madoko .figure, .madoko .bibitem, .madoko .equation, .madoko div.math {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .figure {
+    padding: 0.5em;
+    margin-left: 0pt;
+    margin-right: 0pt;
+  }
+  .madoko .hidden {
+    display: none;
+  }
+  .madoko .invisible {
+    visibility: hidden;
+  }
+  .madoko.preview .invisible {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  .madoko code.code, .madoko span.code {
+    white-space: pre-wrap;
+  }
+  .madoko hr, hr.madoko {
+    border: none;
+    border-bottom: black solid 1px;
+    margin-bottom: 0.5ex;
+  }
+  .madoko .framed>*:first-child {
+    margin-top: 0pt;
+  }
+  .madoko .framed>*:last-child {
+    margin-bottom: 0pt;
+  }
+  .madoko ul.list-style-type-dash {
+      list-style-type: none !important;
+  }
+  .madoko ul.list-style-type-dash > li:before {
+      content: "\2013"; 
+      position: absolute;
+      margin-left: -1em; 
+  }
+  .madoko table.madoko {
+    border-collapse: collapse;
+  }
+  .madoko td, .madoko th {
+    padding: 0ex 0.5ex;
+    margin: 0pt;
+    vertical-align: top;
+  }
+  .madoko .cell-border-left {
+    border-left: 1px solid black;
+  }
+  .madoko .cell-border-right {
+    border-right: 1px solid black;
+  }
+  .madoko thead>tr:first-child>.cell-line,
+  .madoko tbody:first-child>tr:first-child>.cell-line {
+    border-top: 1px solid black;
+    border-bottom: none;
+  }
+  .madoko .cell-line, .madoko .cell-double-line {
+    border-bottom: 1px solid black;
+    border-top: none;
+  }
+  .madoko .cell-double-line {
+    border-top: 1px solid black;
+    padding-top: 1.5px !important;
+  }
+  .madoko .input-mathpre .MathJax_Display {
+    text-align: left !important;
+  }
+  .madoko div.input-mathpre {
+    text-align: left;
+    margin-top: 1.5ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .math-rendering {
+    color: gray;
+  }
+  .madoko .mathdisplay {
+    text-align: center;
+  }
+  .madoko .pretty table {
+    border-collapse: collapse;
+  }
+  .madoko .pretty td {
+    padding: 0em;
+  }
+  .madoko .pretty td.empty {
+    min-width: 1.5ex;
+  }
+  .madoko .pretty td.expander {
+    width: 100em;
+  }
+  body.madoko, .madoko .serif {
+    font-family: Cambria,"Times New Roman","Liberation Serif","Times",serif;
+  }
+  .madoko .sans-serif {
+    font-family: "Calibri", "Optima", sans-serif;
+  }
+  .madoko .symbol {
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  body.madoko {  
+    -webkit-text-size-adjust: 100%;       
+    text-rendering: optimizeLegibility;
+  }
+  body.madoko {
+    max-width: 88ex; 
+    margin: 1em auto;
+    padding: 0em 2em;  
+  }
+  body.preview.madoko {
+    padding: 0em 1em;
+  }
+  .madoko p {
+    text-align: justify;
+  }
+  .madoko h1, .madoko h2, .madoko h3, .madoko h4 { 
+    margin-top: 1.22em; 
+    margin-bottom: 1ex;
+  }
+  .madoko h1+p, .madoko h2+p, .madoko h3+p, .madoko h4+p, .madoko h5+p  { 
+    margin-top: 1ex;    
+  }
+  .madoko h5, .madoko h6 { 
+    margin-top: 1ex;
+    font-size: 1em;
+  }
+  .madoko h5 { 
+    margin-bottom: 0.5ex;
+  }
+  .madoko h5 + p {
+    margin-top: 0.5ex;
+  }
+  .madoko h6 { 
+    margin-bottom: 0pt;
+  }
+  .madoko h6 + p {
+    margin-top: 0pt;
+  }
+  .madoko pre, .madoko code, .madoko kbd, .madoko samp, .madoko tt, 
+  .madoko .monospace, .madoko .token-indent, .madoko .reveal pre, .madoko .reveal code, .madoko .email {
+    font-family: Consolas,"Andale Mono WT","Andale Mono",Lucida Console,Monaco,monospace,monospace;
+    font-size: 0.85em;
+  }
+  .madoko pre code, .madoko .token-indent {
+    font-size: 0.95em;
+  }
+  .madoko pre code {
+    font-family: inherit !important;
+  }
+  .madoko ol.linenums li {
+    background-color: white;
+    list-style-type: decimal;
+  }
+  .madoko .remote {
+    background-color: #F0FFF0;
+  }
+  .madoko .remote + * {
+    margin-top: 0pt;
+  }
+  @media print {
+    body.madoko {
+      font-size: 10pt;
+    }
+    @page {
+      margin: 1in 1.5in;
+    }
+  }
+  @media only screen and (max-device-width:1024px) {
+    body.madoko {
+      padding: 0em 0.5em;    
+    }
+    .madoko li {
+      text-align: left;
+    }
+  }
+  
+    </style>
+  
+  </head>
+<body class="madoko">
+
+<div class="body madoko" style="line-adjust:0"><h2 id="section" class="h1" data-heading-depth="1" style="display:block"><span class="heading-before"><span class="heading-label">1</span>.&#8194;</span>定义</h2>
+<ol class="ol compact">
+<li class="li ol-li compact-li">有两名选手；
+</li>
+<li class="li ol-li compact-li">两名选手交替对游戏进行移动(move)，每次一步，选手可以在（一般而言）有限的合法移动集合中任选一种进行移动；
+</li>
+<li class="li ol-li compact-li">对于游戏的任何一种可能的局面，合法的移动集合只取决于这个局面本身，不取决于轮到哪名选手操作、以前的任何操作、骰子的点数或者其它什么因素； 
+</li>
+<li class="li ol-li compact-li">如果轮到某名选手移动，且这个局面的合法的移动集合为空（也就是说此时无法进行移动），则这名选手负。
+</li></ol>
+
+<p class="p noindent">根据这个定义，很多日常的游戏并非ICG。例如象棋就不满足条件3，因为红方只能移动红子，黑方只能移动黑子，合法的移动集合取决于轮到哪名选手操作。
+</p>
+<p class="p indent">在定义P-position和N-position：
+</p>
+<dl class="dl compact">
+<dt class="dt noindent dl-li compact-li" style="text-indent:0em;font-weight:bold">P-position</dt>
+<dd class="dd" style="margin-left:1.5em">可以移动到P-position的局面是N-position
+</dd>
+<dd class="dd" style="margin-left:1.5em">P-position表示无法进行任何移动的局面
+</dd>
+<dt class="dt noindent dl-li compact-li" style="text-indent:0em;font-weight:bold">N-position</dt>
+<dd class="dd" style="margin-left:1.5em">只能移动到N-position的局面是P-position</dd></dl>
+<p class="p noindent">也就是说P-position是<code class="code code1">后手必胜</code>，N-position是<code class="code code1">先手必胜</code>。
+</p><h3 id="section" class="h2" data-heading-depth="2" style="display:block"><span class="heading-before"><span class="heading-label">1.1</span>.&#8194;</span>例子</h3>
+<div class="example" style="display:block;margin:1ex 0pt">
+<p class="p noindent"><span class="example-before"><strong class="strong-star2">Example&#160;<span class="example-label">1</span>.</strong> <span class="theorem-caption"></span><br>
+</span>给出n列珍珠，两人轮流取珍珠，每次在某一列中取至少1颗珍珠，但不能在两列中取。最后拿光珍珠的人输。</p></div>
+<p class="p noindent">后来，在一份资料上看到，这种游戏称为“拈（Nim）”。据说，它源自中国，经由被贩卖到美洲的奴工们外传。辛苦的工人们，在工作闲暇之余，用石头玩游戏以排遣寂寞。后来流传到高级人士，则用便士（Pennies），在酒吧柜台上玩。
+</p>
+<p class="p indent">以Nim游戏为例来进行一下计算。比如说我刚才说当只有两堆石子且两堆石子数量相等时后手有必胜策略，也就是这是一个P-position，下面我们依靠定义证明一下(3,3)是一个P是一个P是一个P-position。首先(3,3)的子局面（也就是通过合法移动可以导致的局面）有(0,3)(1,3)(2,3)（显然交换石子堆的位置不影响其性质，所以把(x,y)和(y,x)看成同一种局面），只需要计算出这三种局面的性质就可以了。 (0,3)的子局面有(0,0)、(0,1)、(0,2)，其中(0,0)显然是P-position，所以(0,3)是N-position（只要找到一个是P-position的子局面就能说明是N-position）。(1,3)的后继中(1,1)是P-position（因为(1,1)的唯一子局面(0,1)是N-position），所以(1,3)也是N-position。同样可以证明(2,3)是N-position。所以(3,3)的所有子局面都是N-position，它就是P-position。通过一点简单的数学归纳，可以严格的证明“有两堆石子时的局面是P-position当且仅当这两堆石子的数目相等”。
+</p>
+<p class="p indent">根据上面这个过程，可以得到一个递归的算法——对于当前的局面，递归计算它的所有子局面的性质，如果存在某个子局面是P-position，那么向这个子局面的移动就是必胜策略。当然，可能你已经敏锐地看出有大量的重叠子问题，所以可以用DP或者记忆化搜索的方法以提高效率。但问题是，利用这个算法，对于某个Nim游戏的局面(a1,a2,&#8230;,an)来说，要想判断它的性质以及找出必胜策略，需要计算O(a1<em class="em-star1">a2</em>&#8230;*an)个局面的性质，不管怎样记忆化都无法降低这个时间复杂度。所以我们需要更高效的判断Nim游戏的局面的性质的方法。
+</p><h2 id="section" class="h1" data-heading-depth="1" style="display:block"><span class="heading-before"><span class="heading-label">2</span>.&#8194;</span>结论</h2>
+<p class="p noindent">根据定义，证明一种判断position的性质的方法的正确性，只需证明三个命题： 
+1. 这个判断将所有terminal position判为P-position；
+2. 根据这个判断被判为N-position的局面一定可以移动到某个P-position；
+3. 根据这个判断被判为P-position的局面无法移动到某个P-position。
+该定理可以通过数学归纳法证明。
+</p>
+<div id="th" class="theorem" style="display:block;margin:1ex 0pt">
+<p class="p noindent"><span class="theorem-before"><strong class="strong-star2">Theorem&#160;<span class="theorem-label">1</span>.</strong> <span class="theorem-caption"></span><br>
+</span>对于<svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.7795em;width:0.6186em" viewBox='34.669 54.722 5.891 7.424' ><desc>$k$</desc><g id='page1'><use x='34.869' xlink:href='#g0-107' y='61.836'/></g></svg>堆硬币，每堆分别含有<svg  class="math-inline math-render-svg math" style="vertical-align:-0.2333em;height:0.9583em;width:6.7947em" viewBox='88.467 54.831 64.711 9.127' ><desc>$N_1,N_2,\dots,N_k$</desc><g id='page2'><use x='88.667' xlink:href='#g0-78' y='61.836'/><use x='96.642' xlink:href='#g2-49' y='63.33'/><use x='101.112' xlink:href='#g0-59' y='61.836'/><use x='105.529' xlink:href='#g0-78' y='61.836'/><use x='113.504' xlink:href='#g2-50' y='63.33'/><use x='117.973' xlink:href='#g0-59' y='61.836'/><use x='122.391' xlink:href='#g0-58' y='61.836'/><use x='126.808' xlink:href='#g0-58' y='61.836'/><use x='131.226' xlink:href='#g0-58' y='61.836'/><use x='135.674' xlink:href='#g0-59' y='61.836'/><use x='140.092' xlink:href='#g0-78' y='61.836'/><use x='148.066' xlink:href='#g1-107' y='63.33'/></g></svg>。游戏的目的是选择最后剩下的硬币。规则如下：
+</p>
+<ol class="ol loose">
+<li class="li ol-li loose-li">
+<p>两个游戏者交替进行游戏
+</p></li>
+<li class="li ol-li loose-li">
+<p>当轮到每个游戏者取子时，选择这些堆中的一堆，并从所选的堆中取走至少一枚硬币
+</p></li>
+<li class="li ol-li loose-li">
+<p>当所有的堆为空时，最后取子的游戏者获胜
+</p></li></ol>
+
+<p class="p noindent">有以下结论：
+</p>
+<p class="p indent">对于一个Nim游戏的局面(a1,a2,&#8230;,ak)，它是P-position当且仅当<code class="code code1">a1^a2^...^ak=0</code>，其中^表示异或(xor)运算。</p></div>
+<div class="proof" style="theorem-caption-end: ;display:block;margin:1ex 0pt">
+<p class="p noindent"><span class="proof-before"><strong class="strong-star2">Proof</strong>. <span class="theorem-caption">(<span style="font-style:italic">Proof of Theorem&nbsp;<a href="#th" class="localref" style="target-element:theorem"><span class="theorem-label">1</span></a></span>)</span> </span>只需依次证明上述三个命题即可。显然命题1正确，因为所有堆为空时，<code class="code code1">0^0^0...^0=0</code>，局面为P-position。
+</p>
+<p class="p indent">对于命题2，若<code class="code code1">a1^a2^...^ak=s!=0</code>，即为N-position，则表明至少存在ai，其二进制表示在s的最高位上是1，否则<code class="code code1">a1^a2^...^ak</code>就无法得到s。比如<code class="code code1">a1^a2^...^ak=100101</code>，那必存在ai二进制的第6高位上是1，那么<code class="code code1">ai^s&lt;ai</code>，那么游戏者直接取第i堆的<code class="code code1">ai-ai^s</code>个硬币，就使得<code class="code code1">a1^a2^...ai^s^...^ak=a1^a2^...^ak^s=0</code>，是一个P-position。
+</p>
+<p class="p indent">对于命题3，<code class="code code1">a1^a2^...^ak=0</code>，如果<code class="code code1">ai--&gt;ai&#39;</code>，<code class="code code1">ai&#39;=ai^s</code>（s一定存在，因为<code class="code code1">ai&#39;&lt;ai</code>）那么<code class="code code1">a1^a2^...^ai-1^(ai^s)^ai+1^...^ak=a1^a2^...^ai-1^ai^ai+1^...^ak^s=0^s!=0</code>，只能得到一个N-position。 <span style="float:right">&#9633;</span></p></div><span data-line=""></span></div>
+<svg id='math-svg-paths' style='display:none' version='1.1' viewBox='0 0 0 0' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<defs>
+<path d='M2.859 -6.804C2.859 -6.814 2.859 -6.914 2.73 -6.914C2.501 -6.914 1.773 -6.834 1.514 -6.814C1.435 -6.804 1.325 -6.795 1.325 -6.615C1.325 -6.496 1.415 -6.496 1.564 -6.496C2.042 -6.496 2.062 -6.426 2.062 -6.326L2.032 -6.127L0.588 -0.389C0.548 -0.249 0.548 -0.229 0.548 -0.169C0.548 0.06 0.747 0.11 0.837 0.11C0.966 0.11 1.116 0.02 1.176 -0.1C1.225 -0.189 1.674 -2.032 1.733 -2.281C2.072 -2.252 2.889 -2.092 2.889 -1.435C2.889 -1.365 2.889 -1.325 2.859 -1.225C2.839 -1.106 2.819 -0.986 2.819 -0.877C2.819 -0.289 3.218 0.11 3.736 0.11C4.035 0.11 4.304 -0.05 4.523 -0.418C4.772 -0.857 4.882 -1.405 4.882 -1.425C4.882 -1.524 4.792 -1.524 4.762 -1.524C4.663 -1.524 4.653 -1.484 4.623 -1.345C4.423 -0.618 4.194 -0.11 3.756 -0.11C3.567 -0.11 3.437 -0.219 3.437 -0.578C3.437 -0.747 3.477 -0.976 3.517 -1.136C3.557 -1.305 3.557 -1.345 3.557 -1.445C3.557 -2.092 2.929 -2.381 2.082 -2.491C2.391 -2.67 2.71 -2.989 2.939 -3.228C3.417 -3.756 3.875 -4.184 4.364 -4.184C4.423 -4.184 4.433 -4.184 4.453 -4.174C4.573 -4.154 4.583 -4.154 4.663 -4.095C4.682 -4.085 4.682 -4.075 4.702 -4.055C4.224 -4.025 4.134 -3.636 4.134 -3.517C4.134 -3.357 4.244 -3.168 4.513 -3.168C4.772 -3.168 5.061 -3.387 5.061 -3.776C5.061 -4.075 4.832 -4.403 4.384 -4.403C4.105 -4.403 3.646 -4.324 2.929 -3.527C2.59 -3.148 2.202 -2.75 1.823 -2.6L2.859 -6.804Z' id='g0-107'/>
+<path d='M1.913 -0.528C1.913 -0.817 1.674 -1.056 1.385 -1.056S0.857 -0.817 0.857 -0.528S1.096 0 1.385 0S1.913 -0.239 1.913 -0.528Z' id='g0-58'/>
+<path d='M2.022 -0.01C2.022 -0.667 1.773 -1.056 1.385 -1.056C1.056 -1.056 0.857 -0.807 0.857 -0.528C0.857 -0.259 1.056 0 1.385 0C1.504 0 1.634 -0.04 1.733 -0.13C1.763 -0.149 1.773 -0.159 1.783 -0.159S1.803 -0.149 1.803 -0.01C1.803 0.727 1.455 1.325 1.126 1.654C1.016 1.763 1.016 1.783 1.016 1.813C1.016 1.883 1.066 1.923 1.116 1.923C1.225 1.923 2.022 1.156 2.022 -0.01Z' id='g0-59'/>
+<path d='M7.532 -5.758C7.631 -6.157 7.811 -6.466 8.608 -6.496C8.658 -6.496 8.777 -6.506 8.777 -6.695C8.777 -6.705 8.777 -6.804 8.648 -6.804C8.319 -6.804 7.97 -6.775 7.641 -6.775C7.303 -6.775 6.954 -6.804 6.625 -6.804C6.565 -6.804 6.446 -6.804 6.446 -6.605C6.446 -6.496 6.545 -6.496 6.625 -6.496C7.193 -6.486 7.303 -6.276 7.303 -6.057C7.303 -6.027 7.283 -5.878 7.273 -5.848L6.157 -1.415L3.955 -6.615C3.875 -6.795 3.866 -6.804 3.636 -6.804H2.301C2.102 -6.804 2.012 -6.804 2.012 -6.605C2.012 -6.496 2.102 -6.496 2.291 -6.496C2.341 -6.496 2.969 -6.496 2.969 -6.406L1.634 -1.056C1.534 -0.658 1.365 -0.339 0.558 -0.309C0.498 -0.309 0.389 -0.299 0.389 -0.11C0.389 -0.04 0.438 0 0.518 0C0.837 0 1.186 -0.03 1.514 -0.03C1.853 -0.03 2.212 0 2.54 0C2.59 0 2.72 0 2.72 -0.199C2.72 -0.299 2.63 -0.309 2.521 -0.309C1.943 -0.329 1.863 -0.548 1.863 -0.747C1.863 -0.817 1.873 -0.867 1.903 -0.976L3.218 -6.237C3.258 -6.177 3.258 -6.157 3.308 -6.057L5.788 -0.189C5.858 -0.02 5.888 0 5.978 0C6.087 0 6.087 -0.03 6.137 -0.209L7.532 -5.758Z' id='g0-78'/>
+<path d='M2.183 -4.631C2.19 -4.645 2.211 -4.735 2.211 -4.742C2.211 -4.777 2.183 -4.84 2.099 -4.84C1.96 -4.84 1.381 -4.784 1.206 -4.77C1.151 -4.763 1.053 -4.756 1.053 -4.61C1.053 -4.512 1.151 -4.512 1.234 -4.512C1.569 -4.512 1.569 -4.463 1.569 -4.407C1.569 -4.359 1.555 -4.317 1.541 -4.254L0.558 -0.307C0.523 -0.181 0.523 -0.167 0.523 -0.153C0.523 -0.049 0.607 0.07 0.76 0.07C0.948 0.07 1.039 -0.07 1.081 -0.223C1.095 -0.251 1.395 -1.478 1.423 -1.576C1.918 -1.527 2.315 -1.367 2.315 -1.004C2.315 -0.969 2.315 -0.934 2.301 -0.865C2.273 -0.76 2.273 -0.725 2.273 -0.649C2.273 -0.153 2.678 0.07 3.013 0.07C3.689 0.07 3.898 -0.99 3.898 -0.997C3.898 -1.088 3.808 -1.088 3.787 -1.088C3.689 -1.088 3.682 -1.053 3.647 -0.921C3.564 -0.621 3.375 -0.126 3.034 -0.126C2.845 -0.126 2.79 -0.3 2.79 -0.488C2.79 -0.607 2.79 -0.621 2.831 -0.802C2.838 -0.823 2.866 -0.941 2.866 -1.018C2.866 -1.639 2.029 -1.736 1.736 -1.757C1.939 -1.883 2.197 -2.113 2.315 -2.218C2.671 -2.552 3.02 -2.88 3.41 -2.88C3.494 -2.88 3.585 -2.859 3.64 -2.79C3.34 -2.741 3.278 -2.504 3.278 -2.399C3.278 -2.246 3.396 -2.141 3.557 -2.141C3.745 -2.141 3.954 -2.294 3.954 -2.587C3.954 -2.817 3.787 -3.075 3.417 -3.075C3.02 -3.075 2.657 -2.79 2.301 -2.462C2.008 -2.183 1.778 -1.967 1.492 -1.848L2.183 -4.631Z' id='g1-107'/>
+<path d='M2.336 -4.435C2.336 -4.624 2.322 -4.631 2.127 -4.631C1.681 -4.191 1.046 -4.184 0.76 -4.184V-3.933C0.928 -3.933 1.388 -3.933 1.771 -4.129V-0.572C1.771 -0.342 1.771 -0.251 1.074 -0.251H0.809V0C0.934 -0.007 1.792 -0.028 2.05 -0.028C2.267 -0.028 3.145 -0.007 3.299 0V-0.251H3.034C2.336 -0.251 2.336 -0.342 2.336 -0.572V-4.435Z' id='g2-49'/>
+<path d='M3.522 -1.269H3.285C3.264 -1.116 3.194 -0.704 3.103 -0.635C3.048 -0.593 2.511 -0.593 2.413 -0.593H1.13C1.862 -1.241 2.106 -1.437 2.525 -1.764C3.041 -2.176 3.522 -2.608 3.522 -3.271C3.522 -4.115 2.783 -4.631 1.89 -4.631C1.025 -4.631 0.439 -4.024 0.439 -3.382C0.439 -3.027 0.739 -2.992 0.809 -2.992C0.976 -2.992 1.179 -3.11 1.179 -3.361C1.179 -3.487 1.13 -3.731 0.767 -3.731C0.983 -4.226 1.458 -4.38 1.785 -4.38C2.483 -4.38 2.845 -3.836 2.845 -3.271C2.845 -2.664 2.413 -2.183 2.19 -1.932L0.509 -0.272C0.439 -0.209 0.439 -0.195 0.439 0H3.313L3.522 -1.269Z' id='g2-50'/>
+</defs>
+</svg>
+
+</body>
+
+</html>
