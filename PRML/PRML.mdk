@@ -19,11 +19,11 @@ Logo          : True
 p(\textbf{w}|\textbf{t})=\frac{p(\textbf{t}|\textbf{w})p(\textbf{w})}{p(\textbf{t})}
 ~
 其中分母里的$p(\textbf{t})$只是用于归一化的量，使得$p(\textbf{w}|\textbf{t})$确实是一个随机变量。我们称$p(\textbf{w})$为$\textbf{w}$的先验概率，$p(\textbf{w}|\textbf{t})$为$\textbf{w}$的后验概率。则贝叶斯方法可以写成：
-~ Equation {#eq_post_pro1}
+~ Equation {#eq_bayes_prox}
 posterior \propto likelihood \times prior
 ~
 上述式子中每个量都可以看做$\textbf{w}$的函数。贝叶斯方法也就是使用观测值将模型中参数的先验概率转化成后验概率，不断优化参数分布的过程。并且Bayesian认为给定输入值$x$得到的预测值$t$也是不确定的，其概率分布可表示成：
-~ Equation {#eq_post_pro1}
+~ Equation {#eq_post_pro}
 p(t|x,\textbf{x},\textbf{t})=\int
 p(t|x,\textbf{w})p(\textbf{w}|\textbf{x},\textbf{t})d\textbf{w} 
 ~
@@ -45,18 +45,18 @@ p(t|x,\textbf{w})p(\textbf{w}|\textbf{x},\textbf{t})d\textbf{w}
 
 我们可以构造这样一个多项式模型：
 
-~ Equation {#eq_post_pro2}
+~ Equation {#eq_model1}
 p(t|x,\textbf{w},\beta)=\mathcal{N}(t|y(x,\textbf{w}),\beta^{-1})
 ~
 
-~ Equation {#eq_max_likilihood1}
+~ Equation {#eq_model2}
 y(x,\textbf{w})=\omega{}_0x+\omega{}_1x+\omega{}_2x^2+\dots{}+\omega{}_Mx^M=\sum_{j=0}^{M} \omega{}_jx^j=\textbf{w}\textbf{x}
 ~
 
-### Frequentist方法
+## Frequentist方法
 
-由于$\textbf{x}$中每个样本都是i.i.d.的，根据$\eqref{eq:pri}$:
-~ Equation {#eq_max_likilihood2}
+由于$\textbf{x}$中每个样本都是i.i.d.的，根据[#eq_model1]:
+~ Equation {#eq_max_likilihood}
 p(\textbf{t}|\textbf{x},\textbf{w},\beta)=\prod_{n=1}^{N}\mathcal{N}(t_n|y(x_n,\textbf{w}),\beta^{-1})
 ~
 即为似然函数，求其对数：
@@ -64,12 +64,12 @@ p(\textbf{t}|\textbf{x},\textbf{w},\beta)=\prod_{n=1}^{N}\mathcal{N}(t_n|y(x_n,\
 \ln{}p(\textbf{t}|\textbf{x},\textbf{w},\beta)=-\frac{\beta}{2}\sum_{n=1}^{N} \{y(x_n,\textbf{w})-t_n\}^2 +\frac{N}{2}\ln\beta-\frac{N}{2}\ln (2\pi)
 ~
 要使得似然函数最大，即要使：
-~ Equation {#eq_max_likilihood3}
+~ Equation {#eq_error}
 error(\textbf{w})=\frac{1}{2}\sum_{n=1}^{N} \{y(x_n,\textbf{w})-t_n\}^2
 ~
-最小，对$\eqref{eq:}$求导求极值得$\textbf{w}$的最大似然估计值$\textbf{w}_{ML}$和$\beta_{ML}$。
+最小，对[#eq_max_likilihood_log]求导求极值得$\textbf{w}$的最大似然估计值$\textbf{w}_{ML}$和$\beta_{ML}$。
 
-显然$\eqref{eq:error}$就是最小二乘法的误差函数，这样得到的模型容易发生过拟合的现象，如下图，我们分别取$N=0,1,3,9$作出的拟合曲线：
+显然[#eq_error]就是最小二乘法的误差函数，这样得到的模型容易发生过拟合的现象，如下图，我们分别取$N=0,1,3,9$作出的拟合曲线：
 
 ~ Figure {#fg_overfit1; caption: "Overfitting"}
 ![Screen Shot 2016-06-27 at 15.10.41]
@@ -88,29 +88,29 @@ error(\textbf{w})=\frac{1}{2}\sum_{n=1}^{N} \{y(x_n,\textbf{w})-t_n\}^2
 
 当然，随着training样本点的增加，最小二乘法的效果会有一定的改善。但是随着模型阶数上升，过拟合不可避免。
 
-### MAP方法
+## MAP方法
 
 首先我们考虑$\textbf{w}$的先验概率，假设：
-~ Equation
+~ Equation {#eq_pre_pro}
 p(\textbf{w}|\alpha)=N(\textbf{w}|\textbf{0},\alpha^{-1}\textbf{I})=(\frac{\alpha}{2\pi})^{(M+1)/2}\exp{-\frac{\alpha}{2}\textbf{w}^\mathrm{T}\textbf{w}}
 ~
 $\alpha$是一个超参数，即参数$\textbf{w}$的参数，它的选取并没有一定准则，通常只是为了方便后续计算。
 
-已知似然函数为$\eqref{eq:like}$和先验概率$\eqref{eq:bayes}$，根据$\eqref{eq:res}$，得：
-~ Equation
+已知似然函数为[#eq_max_likilihood]和先验概率[#eq_pre_pro]，根据[#eq_bayes_prox]，得：
+~ Equation {#eq_bayes_prox1}
 p(\textbf{w}|\textbf{t},\alpha,\beta) \propto p(\textbf{t}|\textbf{x},\textbf{w},\beta)p(\textbf{w}|\alpha)
 ~
 
-现在我们可以通过使后验概率$p(\textbf{w}|\textbf{t},\alpha,\beta) $最大，得到$\textbf{w}$，这种方法称作*maximum posterior*，简称*MAP*。根据$\eqref{6},\eqref{8},\eqref{9}$，易知要使$p(\textbf{w}|\textbf{t},\alpha,\beta) $最大，即使
-~ Equation
+现在我们可以通过使后验概率$p(\textbf{w}|\textbf{t},\alpha,\beta) $最大，得到$\textbf{w}$，这种方法称作*maximum posterior*，简称*MAP*。根据[#eq_max_likilihood]，[#eq_pre_pro]，[#eq_bayes_prox]，易知要使$p(\textbf{w}|\textbf{t},\alpha,\beta) $最大，即使
+~ Equation {#eq_result}
 \frac{\beta}{2}\sum_{n=1}^{N}\{y(x_n,\textbf{w})-t_n\}^2+\frac{\alpha}{2}\textbf{w}^\mathrm{T}\textbf{w}\tag{12}
 ~
 最小。
 
 让我们回到Frequentist方法（最小二乘法），通过分析拟合的结果$\textbf{w}$：
 
-可以看到，随着拟合阶数的增大，拟合出的参数越来越大。这也从一定程度上解释了过拟合的原因——过大的参数放大了输入值中的噪声，从而影响了输出值的准确性。所以，我们可以改进Frequentist方法，使其的误差方程对于参数有一个罚分项$\textbf{w}^\mathrm{T}\textbf{w}$，即$\eqref{10}$。
+可以看到，随着拟合阶数的增大，拟合出的参数越来越大。这也从一定程度上解释了过拟合的原因——过大的参数放大了输入值中的噪声，从而影响了输出值的准确性。所以，我们可以改进Frequentist方法，使其的误差方程对于参数有一个罚分项$\textbf{w}^\mathrm{T}\textbf{w}$，即[#eq_result]。
 
-### Bayesian方法
+## Bayesian方法
 
-正统的Bayesian方法在计算出后验概率$\eqref{9}$
+正统的Bayesian方法在计算出后验概率[#eq_bayes_prox1].
